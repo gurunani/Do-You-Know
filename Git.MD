@@ -104,3 +104,96 @@ Your commits (E', F') look new but content is same.
 
 If you want I can also give a **short .md version**, **cheat sheet**, or **diagrams only Markdown**.
 ```
+
+
+
+# Git Branching Strategies
+
+## 1. Why Branching?
+Branches allow developers to work on features, fixes, and releases without affecting the stable production code.
+
+---
+
+## 2. Common Branches
+- **main/master** → Stable production-ready code  
+- **dev/develop** → Integration/testing branch  
+- **feature/** → New feature development  
+- **release/** → Final prep before production  
+- **hotfix/** → Urgent production fixes  
+
+---
+
+## 3. How Code Moves from DEV → PROD
+1. Create a **feature branch**  
+2. Complete work → Merge into **dev**  
+3. After testing → Merge **dev → release**  
+4. After QA → Merge **release → main**  
+5. Hotfix flows → **hotfix → main + dev**
+
+---
+
+## 4. Branching Strategies
+
+---
+
+### A. Git Flow (Classic / Waterfall Style)
+Uses:
+- **master**
+- **develop**
+- **feature/**
+- **release/**
+- **hotfix/**
+
+**Flow:**  
+feature → develop → release → master  
+hotfix → master + develop
+
+**Pros:** Structured, stable  
+**Cons:** Slow for fast releases  
+
+**Best for:** Large teams, long release cycles
+
+---
+
+### B. Feature Branching (Agile / DevOps)
+Uses:
+- **main**
+- **feature/**
+
+**Flow:**  
+feature → main (via Pull Request)
+
+**Pros:** Simple, clean history  
+**Cons:** Requires strong CI/testing  
+
+**Best for:** Agile teams, microservices
+
+---
+
+### C. Trunk-Based Development (TBD)
+Uses:
+- **main** + very short-lived branches
+
+**Flow:**  
+Small commits → Merge to main frequently  
+Uses **feature flags** for incomplete features
+
+**Pros:** Very fast, fewer merge conflicts  
+**Cons:** Needs discipline + automation  
+
+**Best for:** High-speed DevOps, CI/CD
+
+---
+
+## 5. Long-Lived vs Short-Lived Branches
+
+### Long-Lived Branches
+- **main/master**
+- **develop** (in Git Flow)
+
+### Short-Lived Branches
+- **feature**
+- **release**
+- **hotfix**
+
+---
