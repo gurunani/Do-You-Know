@@ -105,7 +105,9 @@ Your commits (E', F') look new but content is same.
 If you want I can also give a **short .md version**, **cheat sheet**, or **diagrams only Markdown**.
 ```
 
-
+---
+---
+---
 
 # Git Branching Strategies
 
