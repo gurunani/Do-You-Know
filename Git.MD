@@ -199,3 +199,58 @@ Uses **feature flags** for incomplete features
 - **hotfix**
 
 ---
+
+# Git Commands - Simple Notes
+
+## 🔄 `git reset`
+**Undo changes by moving HEAD pointer**
+- Like going back in time to an earlier save point
+- **3 modes:**
+  1. `--soft` - undo commit but keep changes staged
+  2. `--mixed` (default) - undo commit, unstage changes
+  3. `--hard` - completely delete commit and changes
+- ⚠️ **Warning:** Don't use on shared commits
+
+---
+
+## ↩️ `git revert`
+**Safe undo - creates new commit reversing changes**
+- Like saying "Oops, let me fix that" without erasing history
+- Good for public/shared commits
+- Example: `git revert abc123` undoes commit `abc123`
+
+---
+
+## 🧹 `git squash`
+**Combine multiple commits into one**
+- Clean up messy commit history before merging
+- Used during `git rebase -i` (interactive rebase)
+- Like taking several sticky notes and merging into one clean note
+
+---
+
+## 📦 `git stash`
+**Temporarily save uncommitted work**
+- "Save for later" without committing
+- Handy when you need to switch tasks
+- **Common uses:**
+  - `git stash` - save changes
+  - `git stash pop` - get changes back
+  - `git stash list` - see all stashes
+
+---
+
+## 🍒 `git cherry-pick`
+**Pick specific commit(s) to copy to current branch**
+- Like copying only your favorite songs from a playlist
+- Syntax: `git cherry-pick <commit-hash>`
+- Useful for applying bug fixes to multiple branches
+
+---
+
+## 📝 Quick Cheat Sheet
+- **Made private mistake?** → `git reset`
+- **Made public mistake?** → `git revert`
+- **Too many commits?** → `git squash`
+- **Need to switch tasks?** → `git stash`
+- **Want just one commit?** → `git cherry-pick`
